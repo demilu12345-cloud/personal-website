@@ -3,314 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="陆晓 Xiao Lu — 中国科学院理论物理研究所助理研究员。研究方向、学术论文与个人经历。">
   <title>陆晓 | 助理研究员</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;600&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #fafafa;
-      --text: #1a1a1a;
-      --muted: #666;
-      --accent: #2563eb;
-      --heading: #0d3b66;
-      --border: #e5e5e5;
-      --max-w: 820px;
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { --bg:#f7f8fc; --text:#303644; --muted:#626b7d; --accent:#334a7d; --heading:#283c65; --border:#d6dce8; }
+    html { scroll-padding-top:110px; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.85 'Inter','PingFang SC',sans-serif; }
+    a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
+    a:focus-visible,button:focus-visible { outline:3px solid var(--accent); outline-offset:5px; }
+    .i18n-en { display:none!important; }
+    body[data-lang="en"] .i18n-zh { display:none!important; }
+    body[data-lang="en"] .i18n-en { display:block!important; }
+    body[data-lang="en"] nav .i18n-en,body[data-lang="en"] footer .i18n-en,body[data-lang="en"] h1 .i18n-en { display:inline!important; }
+    .container { max-width:1180px; margin:auto; padding:0 36px; }
+    nav { position:sticky; top:0; z-index:10; background:var(--bg); border-bottom:1px solid var(--border); }
+    nav .nav-row { display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:96px; }
+    nav .name { color:var(--accent); font:500 25px/1.35 'Lora',Georgia,serif; }
+    .nav-links { display:flex; flex-direction:row-reverse; align-items:center; gap:32px; }
+    nav ul { display:flex; list-style:none; padding:0; margin:0; gap:28px; }
+    nav ul a { font-size:15px; color:var(--muted); }
+    .lang-switch { display:flex; gap:4px; padding:3px; border:1px solid var(--border); border-radius:5px; }
+    .lang-switch button { border:0; background:transparent; color:var(--muted); padding:5px 9px; font-family:inherit; font-size:14px; line-height:1.5; cursor:pointer; border-radius:3px; }
+    .lang-switch button.is-active { background:#e5eaf6; color:#334a7d; }
+    .page-layout { display:grid; grid-template-columns:225px minmax(0,1fr); gap:64px; padding-top:52px; padding-bottom:70px; }
+    .hero { position:sticky; top:138px; align-self:start; }
+    .hero-layout { display:flex; flex-direction:column-reverse; gap:24px; }
+    .hero-photo img { display:block; width:158px; height:190px; object-fit:cover; object-position:center 20%; border-radius:48% 48% 44% 44%; padding:5px; border:1px solid #9aa9c5; background:var(--bg); }
+    .hero h1 { margin:0 0 10px; color:var(--heading); font:600 28px/1.4 'Noto Serif SC',serif; }
+    body[data-lang="en"] .hero h1 { font-family:'Lora',Georgia,serif; font-size:30px; }
+    .hero .title { color:var(--muted); font-size:14px; line-height:1.8; margin:0 0 22px; }
+    .contact-links { display:flex; flex-direction:column; gap:15px; border-top:1px dashed #a2b0cf; padding-top:23px; }
+    .contact-links a { display:flex; gap:9px; align-items:flex-start; font-size:14px; overflow-wrap:anywhere; }
+    .contact-links svg { flex:0 0 18px; width:18px; height:18px; margin-top:4px; }
+    main { min-width:0; }
+    section { margin:0 0 54px; }
+    section h2 { display:table; margin:0 0 24px; padding-bottom:9px; border-bottom:2px solid #879cc7; color:var(--heading); font:600 23px/1.4 'Noto Serif SC',serif; }
+    body[data-lang="en"] section h2 { font-family:'Lora',Georgia,serif; font-size:28px; }
+    .bio-card { position:relative; padding:30px 34px; border:1px solid #a6b3cf; box-shadow:3px 3px 0 #e5e9f3; }
+    .bio-card::before,.bio-card::after { content:''; position:absolute; width:18px; height:18px; pointer-events:none; }
+    .bio-card::before { top:-5px; left:-5px; border-left:2px solid #879cc7; border-top:2px solid #879cc7; }
+    .bio-card::after { bottom:-5px; right:-5px; border-right:2px solid #a6aed0; border-bottom:2px solid #a6aed0; }
+    .bio-card p { margin:0 0 16px; } .bio-card p:last-child { margin-bottom:0; }
+    .research-list { padding:0; list-style:none; margin:0; counter-reset:research; }
+    .research-list li { counter-increment:research; display:flex; align-items:baseline; gap:18px; padding:14px 0; border-bottom:1px solid var(--border); }
+    .research-list li::before { content:'0' counter(research); color:#697da6; font:24px 'Lora',Georgia,serif; }
+    .pub-list { list-style:none; padding:0; margin:0; counter-reset:publication; }
+    .pub-item { position:relative; counter-increment:publication; padding:21px 0 21px 3rem; border-bottom:1px solid var(--border); }
+    .pub-item::before { content:"[" counter(publication) "]"; position:absolute; left:0; top:21px; color:var(--accent); font-size:14px; line-height:1.9; font-variant-numeric:tabular-nums; }
+    .pub-item:first-child::before { top:0; }
+    .pub-item:first-child { padding-top:0; }
+    .pub-title { font-size:16px; font-weight:500; line-height:1.65; margin:0 0 7px; color:var(--heading); }
+    .pub-authors,.pub-journal { font-size:14px; line-height:1.7; margin:0 0 4px; color:var(--muted); }
+    .pub-authors strong { font-weight:600; color:var(--text); }
+    .subsection-title { color:var(--accent); font-size:14px; font-weight:600; margin:26px 0 12px; }
+    .exp-line { margin:0; padding:12px 0 12px 20px; border-left:1px solid #b0bdd7; position:relative; font-size:16px; }
+    .exp-line::before { content:''; position:absolute; left:-4px; top:24px; width:7px; height:7px; border-radius:50%; background:#6c83b1; }
+    .exp-when { display:block; font-size:14px; color:var(--muted); }
+    footer { border-top:1px solid var(--border); padding:26px 24px; text-align:center; color:var(--muted); font-size:14px; }
+    footer p { margin:0; }
+    @media(max-width:950px) { .page-layout { gap:36px; grid-template-columns:190px minmax(0,1fr); } nav .name { font-size:22px; } .nav-links { gap:18px; } nav ul { gap:18px; } }
+    @media(max-width:700px) {
+      html { scroll-padding-top:145px; }
+      .container { padding-left:22px; padding-right:22px; }
+      nav .nav-row { align-items:flex-start; flex-direction:column; gap:16px; padding-top:18px; padding-bottom:18px; }
+      .nav-links { width:100%; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+      nav ul { gap:18px; } nav ul a { font-size:14px; }
+      .page-layout { display:block; padding-top:30px; }
+      .hero { position:static; margin-bottom:40px; }
+      .hero-layout { display:grid; grid-template-columns:minmax(0,1fr) 100px; gap:18px; }
+      .hero-photo img { width:100px; height:126px; }
+      .hero h1 { font-size:25px; }
+      .hero .title { margin-bottom:15px; }
+      .contact-links { padding-top:15px; gap:10px; }
+      .bio-card { padding:24px; } section { margin-bottom:40px; }
     }
-
-    html {
-      scroll-padding-top: 72px;
-    }
-
-    body {
-      font-family: 'Inter', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      font-size: 16px;
-    }
-
-    body[data-lang="en"] { font-family: 'Inter', sans-serif; }
-
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    /* i18n visibility */
-    .i18n-en { display: none !important; }
-    body[data-lang="en"] .i18n-zh { display: none !important; }
-    body[data-lang="en"] .i18n-en {
-      display: block !important;
-    }
-    body[data-lang="en"] nav ul a .i18n-en,
-    body[data-lang="zh"] nav ul a .i18n-zh,
-    body[data-lang="en"] .contact-links a .i18n-en,
-    body[data-lang="zh"] .contact-links a .i18n-zh,
-    body[data-lang="en"] footer .i18n-en,
-    body[data-lang="zh"] footer .i18n-zh,
-    body[data-lang="en"] .hero h1 .i18n-en,
-    body[data-lang="zh"] .hero h1 .i18n-zh {
-      display: inline !important;
-    }
-
-    nav .nav-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    nav .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    /* NAV */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
-      background: var(--bg);
-      background-color: rgba(250, 250, 250, 0.92);
-      backdrop-filter: saturate(180%) blur(10px);
-      -webkit-backdrop-filter: saturate(180%) blur(10px);
-    }
-    nav .container {
-      display: block;
-    }
-    nav .name { font-weight: 600; font-size: 15px; letter-spacing: 0.02em; }
-    nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
-    nav ul a {
-      font-size: 14px;
-      color: var(--accent);
-      font-weight: 600;
-    }
-    nav ul a:hover {
-      color: #1d4ed8;
-      text-decoration: underline;
-    }
-
-    .lang-switch {
-      display: inline-flex;
-      align-items: center;
-      gap: 0;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      background: #fff;
-    }
-    .lang-switch button {
-      font: inherit;
-      font-size: 13px;
-      font-weight: 500;
-      padding: 6px 12px;
-      border: none;
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-      line-height: 1.2;
-    }
-    .lang-switch button:hover {
-      color: var(--text);
-      background: rgba(37, 99, 235, 0.06);
-    }
-    .lang-switch button.is-active {
-      background: #eff6ff;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    /* HERO */
-    .hero {
-      padding: 80px 0 64px;
-    }
-    .hero-layout {
-      display: grid;
-      grid-template-columns: 1fr 112px;
-      gap: 28px;
-      align-items: start;
-    }
-    .hero h1 {
-      font-size: clamp(2.45rem, 6vw, 3.6rem);
-      font-weight: 600;
-      letter-spacing: -0.025em;
-      line-height: 1.15;
-      margin-bottom: 16px;
-      color: var(--heading);
-    }
-    .hero .title {
-      font-size: 17px;
-      color: var(--muted);
-      margin-bottom: 28px;
-    }
-    .hero-photo {
-      margin-top: 4px;
-    }
-    .hero-photo img {
-      display: block;
-      width: 112px;
-      height: auto;
-      max-height: 160px;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-    }
-    .contact-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .contact-links a {
-      font-size: 14px;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .contact-links a:hover { color: var(--accent); text-decoration: none; }
-
-    /* SECTION */
-    section {
-      padding: 56px 0;
-      border-top: 1px solid var(--border);
-    }
-    section > h2 {
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--heading);
-      margin-bottom: 24px;
-    }
-    body[data-lang="en"] section > h2 {
-      text-transform: none;
-      letter-spacing: 0;
-    }
-    .subsection-title {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 28px 0 16px;
-    }
-    body[data-lang="en"] .subsection-title {
-      text-transform: none;
-      letter-spacing: 0.02em;
-    }
-    .subsection-title:first-of-type { margin-top: 0; }
-
-    /* RESEARCH */
-    .research-list {
-      font-size: 15px;
-      line-height: 1.75;
-      color: var(--text);
-      margin: 0;
-      padding-left: 1.35rem;
-      list-style-type: disc;
-    }
-    .research-list li {
-      margin-bottom: 0.6rem;
-    }
-    .research-list li:last-child {
-      margin-bottom: 0;
-    }
-
-    /* PUBLICATIONS */
-    .pub-list { list-style: none; }
-    .pub-item {
-      padding: 18px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .pub-item:last-child { border-bottom: none; }
-    .pub-title {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text);
-      margin-bottom: 6px;
-      line-height: 1.5;
-    }
-    .pub-authors {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-    .pub-authors strong.self {
-      font-weight: 600;
-      color: var(--text);
-    }
-    .pub-journal {
-      font-size: 13px;
-      color: var(--accent);
-    }
-    .pub-journal a {
-      color: inherit;
-    }
-
-    /* EXPERIENCE */
-    .exp-line {
-      font-size: 15px;
-      line-height: 1.65;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-      margin: 0;
-    }
-    .exp-line:last-child { border-bottom: none; }
-    .exp-line .exp-when {
-      display: inline-block;
-      min-width: 11.5rem;
-      margin-right: 0.65rem;
-      font-size: 13px;
-      color: var(--muted);
-      font-variant-numeric: tabular-nums;
-      vertical-align: top;
-    }
-
-    /* FOOTER */
-    footer {
-      padding: 40px 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
-    footer p { font-size: 13px; color: var(--muted); }
-
-    @media (max-width: 600px) {
-      .exp-line .exp-when {
-        display: block;
-        min-width: unset;
-        margin-bottom: 4px;
-      }
-      nav ul { gap: 16px; }
-      .hero-layout {
-        grid-template-columns: 1fr;
-      }
-      .hero-photo {
-        justify-self: start;
-        margin-bottom: 8px;
-      }
-    }
+    @media(prefers-reduced-motion:no-preference) { html { scroll-behavior:smooth; } }
   </style>
 </head>
 <body data-lang="zh">
 
 <nav>
   <div class="container nav-row">
-    <span class="name">陆晓 / Xiao Lu</span>
+    <a class="name" href="#about">Xiao Lu’s personal page</a>
     <div class="nav-links">
       <div class="lang-switch" role="group" aria-label="Language">
         <button type="button" id="btn-lang-zh" class="is-active" aria-pressed="true">中文</button>
         <button type="button" id="btn-lang-en" aria-pressed="false">English</button>
       </div>
       <ul>
+        <li><a href="#about"><span class="i18n-zh">简介</span><span class="i18n-en">About</span></a></li>
         <li><a href="#research"><span class="i18n-zh">研究</span><span class="i18n-en">Research</span></a></li>
         <li><a href="#publications"><span class="i18n-zh">论文</span><span class="i18n-en">Publications</span></a></li>
         <li><a href="#experience"><span class="i18n-zh">经历</span><span class="i18n-en">Bio</span></a></li>
@@ -319,9 +102,9 @@
   </div>
 </nav>
 
-<div class="container">
+<div class="container page-layout">
 
-  <div class="hero">
+  <aside class="hero" aria-label="Profile">
     <div class="hero-layout">
       <div>
         <h1><span class="i18n-zh">陆晓</span><span class="i18n-en">Xiao Lu</span></h1>
@@ -337,14 +120,35 @@
             <span class="i18n-zh">中国科学院理论物理研究所</span>
             <span class="i18n-en">Institute of Theoretical Physics, CAS</span>
           </a>
+          <a href="https://github.com/demilu12345-cloud/personal-website" target="_blank" rel="noopener noreferrer"><svg class="social-icon" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+          <a href="https://scholar.google.com/citations?hl=zh-CN&amp;user=q_3T3kcAAAAJ" target="_blank" rel="noopener noreferrer"><svg class="social-icon" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg><span>Google Scholar</span></a>
+          <a href="https://www.researchgate.net/profile/Xiao-Lu-50?ev=hdr_xprf" target="_blank" rel="noopener noreferrer"><svg class="social-icon" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.123 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.743.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82c0-.095-.047-.142-.14-.142h-3.064c-.094 0-.14.047-.14.141v.956c0 .094.046.14.14.14h1.666c.056 0 .084.03.084.086 0 .36 0 .62-.036.865-.038.244-.1.447-.147.606-.108.385-.348.664-.638.876-.29.212-.738.35-1.227.35-.545 0-.901-.15-1.21-.353-.306-.203-.517-.454-.67-.915a3.136 3.136 0 0 1-.147-.762 17.366 17.367 0 0 1-.034-.656c-.01-.26-.014-.572-.014-.939a26.401 26.403 0 0 1 .014-.938 15.821 15.822 0 0 1 .035-.656 3.19 3.19 0 0 1 .148-.76 1.89 1.89 0 0 1 .742-1.01c.344-.244.593-.352 1.137-.352.508 0 .815.096 1.144.303.33.207.528.492.764.925.047.094.111.118.198.07l1.044-.43c.075-.048.09-.115.042-.199a3.549 3.549 0 0 0-.466-.742 3 3 0 0 0-.679-.607 3.313 3.313 0 0 0-.903-.41A4.068 4.068 0 0 0 19.586 0zM8.217 5.836c-1.69 0-3.036.086-4.297.086-1.146 0-2.291 0-3.007-.029v.831l1.088.2c.744.144 1.174.488 1.174 2.264v11.288c0 1.777-.43 2.12-1.174 2.263l-1.088.2v.832c.773-.029 2.12-.086 3.465-.086 1.29 0 2.951.057 3.667.086v-.831l-1.49-.2c-.773-.115-1.174-.487-1.174-2.264v-4.784c.688.057 1.29.057 2.206.057 1.748 3.123 3.41 5.472 4.355 6.56.86 1.032 2.177 1.691 3.839 1.691.487 0 1.003-.086 1.318-.23v-.744c-1.031 0-2.063-.716-2.808-1.518-1.26-1.376-2.95-3.582-4.355-6.074 2.32-.545 4.04-2.722 4.04-4.9 0-3.208-2.492-4.698-5.758-4.698zm-.515 1.29c2.406 0 3.839 1.26 3.839 3.552 0 2.263-1.547 3.782-4.097 3.782-.974 0-1.404-.03-2.063-.086v-7.19c.66-.059 1.547-.059 2.32-.059z"/></svg><span>ResearchGate</span></a>
+          <a href="https://orcid.org/0000-0002-0037-7890" target="_blank" rel="noopener noreferrer"><svg class="social-icon" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/></svg><span>ORCID</span></a>
         </div>
       </div>
       <div class="hero-photo">
         <img src="portrait.jpg" width="112" height="140" alt="陆晓">
       </div>
     </div>
-  </div>
+  </aside>
 
+  <main>
+  <section id="about">
+    <h2 class="i18n-zh">关于我</h2>
+    <h2 class="i18n-en">About me</h2>
+    <div class="bio-card">
+      <div class="i18n-zh">
+        <p>你好，我是陆晓，目前在中国科学院理论物理研究所担任助理研究员，从事原子核理论研究。</p>
+        <p>我的工作聚焦于投影后变分壳模型的发展与应用，以及原子核中的八极关联、手征对称性破缺和形变晕核的软偶极响应。</p>
+        <p>我于 2023 年在中国原子能科学研究院获得博士学位，随后在中国科学院理论物理研究所从事博士后研究，并于 2025 年起担任助理研究员。</p>
+      </div>
+      <div class="i18n-en">
+        <p>Welcome! I am Xiao Lu, an assistant researcher at the Institute of Theoretical Physics, Chinese Academy of Sciences, working on nuclear theory.</p>
+        <p>My research focuses on the development and application of the variation-after-projection shell model, octupole correlations and chiral symmetry breaking in nuclei, and the soft dipole response of deformed halo nuclei.</p>
+        <p>I received my Ph.D. from the China Institute of Atomic Energy in 2023. I then joined the Institute of Theoretical Physics, CAS, as a postdoctoral researcher and became an assistant researcher in 2025.</p>
+      </div>
+    </div>
+  </section>
   <section id="research">
     <h2 class="i18n-zh">研究方向</h2>
     <h2 class="i18n-en">Research</h2>
@@ -365,7 +169,26 @@
   <section id="publications">
     <h2 class="i18n-zh">论文</h2>
     <h2 class="i18n-en">Publications</h2>
-    <ul class="pub-list">
+    <ol class="pub-list">
+
+      <li class="pub-item">
+        <p class="pub-title">Deformed neutron halo nuclei and soft dipole excitations in the 40 &lt; A &lt; 90 mass region</p>
+        <p class="pub-authors"><strong class="self">X. Lu</strong>, C. Pan, H. Sagawa, X. X. Sun, and S. G. Zhou</p>
+        <p class="pub-journal"><a href="https://link.aps.org/doi/10.1103/prxh-9vjg" target="_blank" rel="noopener noreferrer">Phys. Rev. C 114, 024337 (2026)</a></p>
+      </li>
+
+      <li class="pub-item">
+        <p class="pub-title">The <sup>229</sup>Th Isomer: Nuclear Structure, Clocks, and Tests of Fundamental Physics</p>
+        <p class="pub-authors"><strong class="self">X. Lu</strong>, R. Zhao, and S. G. Zhou</p>
+        <p class="pub-journal"><a href="https://doi.org/10.1088/1674-1056/ae9533" target="_blank" rel="noopener noreferrer">Chin. Phys. B 35, 080601 (2026)</a> · <a href="https://arxiv.org/abs/2606.26600" target="_blank" rel="noopener noreferrer">arXiv:2606.26600</a></p>
+      </li>
+
+      <li class="pub-item">
+        <p class="pub-title">A Halo: Triggering a New Era of Nuclear Correlations</p>
+        <p class="pub-authors">H. Sagawa, <strong class="self">X. Lu</strong>, and S. G. Zhou</p>
+        <p class="pub-journal"><a href="https://doi.org/10.3390/particles9020050" target="_blank" rel="noopener noreferrer">Particles 9, 50 (2026)</a></p>
+      </li>
+
 
       <li class="pub-item">
         <p class="pub-title">Octupole correlations in <sup>220,222,224,226</sup>Rn</p>
@@ -469,7 +292,7 @@
         <p class="pub-journal"><a href="https://doi.org/10.1088/0256-307x/35/10/102101" target="_blank" rel="noopener noreferrer">Chin. Phys. Lett. 35(10), 102101 (2018)</a></p>
       </li>
 
-    </ul>
+    </ol>
   </section>
 
   <section id="experience">
@@ -493,6 +316,7 @@
     <p class="exp-line i18n-en"><span class="exp-when">Aug 2025 – present</span>Assistant researcher, Institute of Theoretical Physics, Chinese Academy of Sciences</p>
   </section>
 
+  </main>
 </div>
 
 <footer>
