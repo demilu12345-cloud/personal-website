@@ -30,7 +30,7 @@
     .page-layout { display:grid; grid-template-columns:225px minmax(0,1fr); gap:64px; padding-top:52px; padding-bottom:70px; }
     .hero { position:sticky; top:138px; align-self:start; }
     .hero-layout { display:flex; flex-direction:column-reverse; gap:24px; }
-    .hero-photo img { display:block; width:158px; height:190px; object-fit:cover; object-position:center 20%; border-radius:48% 48% 44% 44%; padding:5px; border:1px solid #9aa9c5; background:var(--bg); }
+    .hero-photo img { image-rendering:-webkit-optimize-contrast; display:block; width:158px; height:auto; border-radius:6px; border:1px solid #d6dce8; background:var(--bg); }
     .hero h1 { margin:0 0 10px; color:var(--heading); font:600 28px/1.4 'Noto Serif SC',serif; }
     body[data-lang="en"] .hero h1 { font-family:'Lora',Georgia,serif; font-size:30px; }
     .hero .title { color:var(--muted); font-size:14px; line-height:1.8; margin:0 0 22px; }
@@ -73,7 +73,7 @@
       .page-layout { display:block; padding-top:30px; }
       .hero { position:static; margin-bottom:40px; }
       .hero-layout { display:grid; grid-template-columns:minmax(0,1fr) 100px; gap:18px; }
-      .hero-photo img { width:100px; height:126px; }
+      .hero-photo img { width:100px; height:auto; }
       .hero h1 { font-size:25px; }
       .hero .title { margin-bottom:15px; }
       .contact-links { padding-top:15px; gap:10px; }
@@ -127,7 +127,7 @@
         </div>
       </div>
       <div class="hero-photo">
-        <img src="portrait.jpg" width="112" height="140" alt="陆晓">
+        <img src="portrait-2024.jpg" width="2214" height="3164" alt="陆晓">
       </div>
     </div>
   </aside>
